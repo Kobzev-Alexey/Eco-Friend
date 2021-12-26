@@ -1,0 +1,27 @@
+{
+  "name": "react_star_db_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && npm install && npm start",
+    "dev": "run-p client server",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SlavaPush/react-stardb-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SlavaPush/react-stardb-project/issues"
+  },
+  "homepage": "https://github.com/SlavaPush/react-stardb-project#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
