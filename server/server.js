@@ -25,9 +25,7 @@ const entryRouter = require("./routers/entry");
 const allUsersRouter = require("./routers/allUsers");
 const mapRouter = require('./routers/map');
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
-})
+
 
 
 app.use(
@@ -57,6 +55,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(methodOverride('_method'));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, "public"))
+})
 
 app.use('/auth', authRouter);
 app.use('/entry', entryRouter);
