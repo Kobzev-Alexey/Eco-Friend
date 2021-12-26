@@ -3,7 +3,7 @@ require("dotenv").config();
 const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 // DB:
 const connectDB = require("./db/dbConnect");
@@ -51,16 +51,16 @@ app.use(
 );
 
 app.use(logger("dev"));
-// app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "build")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(methodOverride('_method'));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, "build", "index.html"))
-})
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "build", "index.html"))
+// })
 
 app.use('/auth', authRouter);
 app.use('/entry', entryRouter);
@@ -92,6 +92,6 @@ app.use((err, req, res, next) => {
 });
 
 
-app.listen(port, () => {
-  console.log(`server started PORT: ${port}`);
+app.listen(PORT, () => {
+  console.log(`server started PORT: ${PORT}`);
 });
