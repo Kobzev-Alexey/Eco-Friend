@@ -1,8 +1,8 @@
 {
-  "name": "react_star_db_project",
+  "name": "eco-friend-kobzev",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "build": "cd client && npm install && npm run build",
     "start": "cd server && npm install && npm start",
@@ -12,15 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SlavaPush/react-stardb-project.git"
+    "url": "git+https://github.com:Kobzev-Alexey/Eco-Friend.git"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SlavaPush/react-stardb-project/issues"
+    "url": "https://github.com:Kobzev-Alexey/Eco-Friend/issues"
   },
-  "homepage": "https://github.com/SlavaPush/react-stardb-project#readme",
+  "homepage": "https://github.com:Kobzev-Alexey/Eco-Friend.git#readme",
   "devDependencies": {
     "npm-run-all": "^4.1.5"
   }
