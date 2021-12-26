@@ -84,6 +84,10 @@ app.use((err, req, res, next) => {
   res.end();
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'))
+})
+
 app.listen(port, () => {
   console.log(`server started PORT: ${port}`);
 });
