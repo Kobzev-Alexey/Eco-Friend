@@ -24,6 +24,7 @@ const authRouter = require("./routers/auth");
 const entryRouter = require("./routers/entry");
 const allUsersRouter = require("./routers/allUsers");
 const mapRouter = require('./routers/map');
+const { dirname } = require("path/posix");
 
 
 
@@ -51,14 +52,14 @@ app.use(
 
 app.use(logger("dev"));
 // app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(path.resolve("../client/public/index.html")));
+app.use(express.static(path.join(__dirname, "build")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(methodOverride('_method'));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve("../client/public/index.html"))
+  res.sendFile(path.resolve(__dirname, "build", "index.html"))
 })
 
 app.use('/auth', authRouter);
