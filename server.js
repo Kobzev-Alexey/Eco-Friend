@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // DB:
-const connectDB = require("./db/dbConnect");
+const connectDB = require("./server/db/dbConnect");
 const MongoStore = require("connect-mongo");
 connectDB();
 
@@ -20,10 +20,10 @@ const session = require("express-session");
 const pgSessionStore = require("connect-pg-simple")(session);
 
 // Импортируем routers
-const authRouter = require("./routers/auth");
-const entryRouter = require("./routers/entry");
-const allUsersRouter = require("./routers/allUsers");
-const mapRouter = require('./routers/map');
+const authRouter = require("./server/routers/auth");
+const entryRouter = require("./server/routers/entry");
+const allUsersRouter = require("./server/routers/allUsers");
+const mapRouter = require('./server/routers/map');
 // const { dirname } = require("path/posix");
 
 
