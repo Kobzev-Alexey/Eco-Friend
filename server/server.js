@@ -51,16 +51,16 @@ app.use(
 );
 
 app.use(logger("dev"));
-app.use(express.static(path.join(__dirname, "public")));
-// app.use(express.static(path.join(__dirname, "build")));
+// app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "build")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(methodOverride('_method'));
 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "build", "index.html"))
-// })
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, "build", "index.html"))
+})
 
 app.use('/auth', authRouter);
 app.use('/entry', entryRouter);
