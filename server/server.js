@@ -24,7 +24,7 @@ const authRouter = require("./routers/auth");
 const entryRouter = require("./routers/entry");
 const allUsersRouter = require("./routers/allUsers");
 const mapRouter = require('./routers/map');
-const { dirname } = require("path/posix");
+// const { dirname } = require("path/posix");
 
 
 
