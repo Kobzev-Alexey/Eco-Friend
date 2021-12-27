@@ -36,10 +36,11 @@
   },
   "scripts": {
     "heroku-postbuild": "npm install",
-    "start": "cd server && node server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && npm install && npm start",
+    "dev": "run-p client server",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start"
   },
   "eslintConfig": {
     "extends": [
